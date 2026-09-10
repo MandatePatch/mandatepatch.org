@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MandatePatch</title>
+<meta name="description" content="MandatePatch — an open artefact layer for amending a signed payment mandate when an agent's transaction diverges from what the human authorised. Specification, reference implementation, filing disclosure.">
+<style>
+  :root { --bg:#0b0f0d; --fg:#e8ede9; --mute:#9aa59e; --green:#1fb26a; --deep:#0d5a35; --rule:#1e2a24; --max:44rem; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  header { display:flex; align-items:center; gap:1rem; margin-bottom:2.5rem; }
+  .mark { width:56px; height:56px; flex:none; }
+  h1 { font-size:1.6rem; letter-spacing:.14em; margin:0; font-weight:600; }
+  h1 span { color:var(--green); }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); margin:2.6rem 0 .8rem; font-weight:600; }
+  p { margin:0 0 1rem; }
+  a { color:var(--green); text-decoration:none; border-bottom:1px solid var(--deep); }
+  a:hover { border-bottom-color:var(--green); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#121a16; padding:.1em .35em; border-radius:3px; }
+  .cite { border-left:3px solid var(--deep); padding:.6rem 1rem; color:var(--fg); background:#0f1512; margin:1rem 0; font-size:.95rem; }
+  .list p { margin:0 0 .6rem; }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule); color:var(--mute); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="10" y="12" width="26" height="10" fill="#ffffff"/><rect x="10" y="12" width="10" height="76" fill="#ffffff"/><rect x="10" y="78" width="26" height="10" fill="#ffffff"/>
+      <rect x="64" y="12" width="26" height="10" fill="#0d5a35"/><rect x="80" y="12" width="10" height="76" fill="#0d5a35"/><rect x="64" y="78" width="26" height="10" fill="#0d5a35"/>
+      <rect x="30" y="30" width="40" height="40" fill="#1fb26a"/>
+    </svg>
+    <h1>MANDATE<span>PATCH</span></h1>
+  </header>
+
+  <p>MandatePatch is an open artefact layer for what happens after an AI agent's transaction diverges from what a human authorised. Existing agent-payment protocols can detect the mismatch and stop. MandatePatch defines what the human's re-entry <em>produces</em>: a signed, transaction-scoped amendment that authorises only the change, is consumed on use, and preserves both the standing mandate and an auditable lineage from original authority to exception.</p>
+
+  <p>The mechanisms — semantic divergence gating against a committed baseline, transaction-scoped amendment, supersession lineage, state-bound asynchronous step-up, and presentation attestation — are published openly and are one implementation of a more general requirement: when software acts under delegated human authority, the payment should not become evidentially orphaned from the authority that permitted it.</p>
+
+  <h2>Specification</h2>
+  <div class="cite">Kirby, M. T., <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no. 11517, August 2026. CC BY 4.0.<br>
+  <a href="https://www.tdcommons.org/dpubs_series/11517">tdcommons.org/dpubs_series/11517</a></div>
+
+  <h2>Reference implementation</h2>
+  <p><a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> — schemas, type stubs, and a canonical commitment function for the artefacts (MandatePatch, divergence record, supersession record). Apache-2.0. It implements the objects and their byte-exact canonical form and deliberately ships no scorer, no service, and no policy engine. JSON Schema identifiers resolve under <code>https://mandatepatch.org/schemas/</code>.</p>
+
+  <h2>Filing and licences</h2>
+  <p>A US provisional patent application (No. 64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The disclosure text is licensed CC BY 4.0; the reference implementation is licensed Apache-2.0. Each licence governs what it names and nothing else.</p>
+
+  <h2>Terminology</h2>
+  <div class="list">
+    <p><strong>Mandate divergence</strong> — the executed transaction leaving the committed mandate. Distinct from <em>behavioural drift</em> (an agent departing from its onboarding profile) and from <em>intent drift</em> (constraints lost while an instruction is interpreted, before any mandate exists).</p>
+    <p><strong>Mandate conformance</strong> — the measurable property that a completed transaction stayed within the authority that permitted it. Never "authorization conformance".</p>
+  </div>
+
+  <h2>Contact</h2>
+  <p>Matthew T. Kirby, independent researcher — <a href="mailto:matthew.kirby@mandatepatch.org">matthew.kirby@mandatepatch.org</a>. Questions about the specification, the reference implementation, or conformance testing are welcome.</p>
+
+  <footer>© 2026 Matthew T. Kirby. Specification CC BY 4.0 · Code Apache-2.0 · MandatePatch and the bracket device are used as marks of origin for this work.</footer>
+</main>
+</body>
+</html>
