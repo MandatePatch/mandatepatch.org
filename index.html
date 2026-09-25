@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MandatePatch</title>
 <meta name="description" content="MandatePatch — an open artefact layer for amending a signed payment mandate when an agent's transaction diverges from what the human authorised. Specification, reference implementation, filing disclosure.">
+<link rel="canonical" href="https://mandatepatch.org/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MandatePatch">
+<meta property="og:title" content="MandatePatch">
+<meta property="og:description" content="An open artefact layer for amending a signed payment mandate when an agent's transaction diverges from what the human authorised. Specification, reference implementation, filing disclosure.">
+<meta property="og:url" content="https://mandatepatch.org/">
+<meta name="twitter:card" content="summary">
 <style>
-  :root { --bg:#0b0f0d; --fg:#e8ede9; --mute:#9aa59e; --green:#1fb26a; --deep:#0d5a35; --rule:#1e2a24; --max:44rem; }
+  :root { color-scheme: dark; --bg:#0b0f0d; --fg:#e8ede9; --mute:#9aa59e; --green:#1fb26a; --deep:#13804c; --rule:#1e2a24; --max:44rem; }
   * { box-sizing:border-box; }
   html,body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
   main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
@@ -44,7 +52,7 @@
   <a href="https://www.tdcommons.org/dpubs_series/11517">tdcommons.org/dpubs_series/11517</a></div>
 
   <h2>Reference implementation</h2>
-  <p><a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> — schemas, type stubs, and a canonical commitment function for the artefacts (MandatePatch, divergence record, supersession record). Apache-2.0. It implements the objects and their byte-exact canonical form and deliberately ships no scorer, no service, and no policy engine. JSON Schema identifiers resolve under <code>https://mandatepatch.org/schemas/</code>.</p>
+  <p><a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> — schemas, type stubs, and a canonical commitment function for the artefacts (MandatePatch, divergence record, supersession record). Apache-2.0. It implements the objects and their byte-exact canonical form and deliberately ships no scorer, no service, and no policy engine. JSON Schema identifiers resolve under <code>https://mandatepatch.org/schemas/</code>, served from this site; the files are generated from the reference implementation and CI fails if the two diverge.</p>
 
   <h2>Filing and licences</h2>
   <p>A US provisional patent application (No. 64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The disclosure text is licensed CC BY 4.0; the reference implementation is licensed Apache-2.0. Each licence governs what it names and nothing else.</p>

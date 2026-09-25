@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<style>
+  .a{fill:#13804c} .b{fill:#0b0f0d}
+  @media (prefers-color-scheme: dark){ .a{fill:#1fb26a} .b{fill:#e8ede9} }
+</style>
+<rect class="b" x="3" y="4" width="8" height="3"/>
+<rect class="b" x="3" y="4" width="3" height="24"/>
+<rect class="b" x="3" y="25" width="8" height="3"/>
+<rect class="b" x="21" y="4" width="8" height="3"/>
+<rect class="b" x="26" y="4" width="3" height="24"/>
+<rect class="b" x="21" y="25" width="8" height="3"/>
+<rect class="a" x="12" y="12" width="8" height="8"/>
+</svg>
