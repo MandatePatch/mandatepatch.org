@@ -12,22 +12,39 @@
 <meta property="og:title" content="MandatePatch">
 <meta property="og:description" content="An open artefact layer for amending a signed payment mandate when an agent's transaction diverges from what the human authorised. Specification, reference implementation, filing disclosure.">
 <meta property="og:url" content="https://mandatepatch.org/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://mandatepatch.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MandatePatch">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { color-scheme: dark; --bg:#0b0f0d; --fg:#e8ede9; --mute:#9aa59e; --green:#1fb26a; --deep:#13804c; --rule:#1e2a24; --max:44rem; }
+  :root {
+    color-scheme: dark light;
+    --bg:#0b0f0d; --fg:#e8ede9; --mute:#9aa59e;
+    --accent:#f0a04b; --deep:#b4781f; --rule:#414643;
+    --code:#141009; --cite:#120e08;
+    --max:44rem;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:#faf9f5; --fg:#2b2f2c; --mute:#646f67;
+      --accent:#b45309; --deep:#8a4b12; --rule:#ddd9cd;
+      --code:#f1ece1; --cite:#f3efe6;
+    }
+  }
   * { box-sizing:border-box; }
   html,body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
   main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
   header { display:flex; align-items:center; gap:1rem; margin-bottom:2.5rem; }
   .mark { width:56px; height:56px; flex:none; }
   h1 { font-size:1.6rem; letter-spacing:.14em; margin:0; font-weight:600; }
-  h1 span { color:var(--green); }
+  h1 span { color:inherit; }
   h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); margin:2.6rem 0 .8rem; font-weight:600; }
   p { margin:0 0 1rem; }
-  a { color:var(--green); text-decoration:none; border-bottom:1px solid var(--deep); }
-  a:hover { border-bottom-color:var(--green); }
-  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#121a16; padding:.1em .35em; border-radius:3px; }
-  .cite { border-left:3px solid var(--deep); padding:.6rem 1rem; color:var(--fg); background:#0f1512; margin:1rem 0; font-size:.95rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:var(--code); padding:.1em .35em; border-radius:3px; }
+  .cite { border-left:3px solid var(--deep); padding:.6rem 1rem; color:var(--fg); background:var(--cite); margin:1rem 0; font-size:.95rem; }
   .list p { margin:0 0 .6rem; }
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule); color:var(--mute); font-size:.9rem; }
 </style>
@@ -36,9 +53,9 @@
 <main>
   <header>
     <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-      <rect x="10" y="12" width="26" height="10" fill="#ffffff"/><rect x="10" y="12" width="10" height="76" fill="#ffffff"/><rect x="10" y="78" width="26" height="10" fill="#ffffff"/>
-      <rect x="64" y="12" width="26" height="10" fill="#0d5a35"/><rect x="80" y="12" width="10" height="76" fill="#0d5a35"/><rect x="64" y="78" width="26" height="10" fill="#0d5a35"/>
-      <rect x="30" y="30" width="40" height="40" fill="#1fb26a"/>
+      <rect x="10" y="12" width="26" height="10" fill="currentColor"/><rect x="10" y="12" width="10" height="76" fill="currentColor"/><rect x="10" y="78" width="26" height="10" fill="currentColor"/>
+      <rect x="64" y="12" width="26" height="10" fill="currentColor"/><rect x="80" y="12" width="10" height="76" fill="currentColor"/><rect x="64" y="78" width="26" height="10" fill="currentColor"/>
+      <rect x="30" y="30" width="40" height="40" fill="var(--accent)"/>
     </svg>
     <h1>MANDATE<span>PATCH</span></h1>
   </header>
@@ -60,9 +77,10 @@
   <h2>Papers</h2>
   <p>The Drift Layer publishes the analytical work around the specification, separately and under its own licence: <a href="https://driftlayer.org/papers/">driftlayer.org/papers</a>.</p>
   <div class="list">
-    <p><a href="https://driftlayer.org/papers/definitions/">Four Measures for Mandate Conformance</a> — the measurement vocabulary: evaluation coverage, mandate conformance, divergence incidence, unauthorised continuation. Free to implement; CC BY 4.0.</p>
+    <p><a href="https://driftlayer.org/papers/definitions/">Four Measures for Mandate Conformance</a> — the measurement vocabulary: evaluation coverage, mandate conformance, divergence incidence, unauthorised continuation. Version 2, 8 October 2026. Free to implement; CC BY 4.0.</p>
     <p><a href="https://driftlayer.org/papers/the-drift-layer/">The Drift Layer: the clean, fast session that is not proof of authority</a> — paper no. 4, 14 September 2026.</p>
     <p><a href="https://driftlayer.org/papers/liability-rule/">A liability rule aimed at the wrong control</a> — paper no. 5, Version 1, 24 September 2026.</p>
+    <p><a href="https://driftlayer.org/papers/instrument/">An obligation in one place, a definition in another</a> — paper no. 6, Version 1, 8 October 2026.</p>
   </div>
 
   <h2>Terminology</h2>
